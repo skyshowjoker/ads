@@ -1,4 +1,4 @@
-package com.example.ads.domain;
+package com.example.ads.entity;
 
 
 import jakarta.persistence.Entity;

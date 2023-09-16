@@ -1,4 +1,4 @@
-package com.example.ads.domain;
+package com.example.ads.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,11 +14,11 @@ public class FileInfo {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     Integer id;
-    Integer pstientId;
+    Integer patientId;
     Date uploadDate;
     String filePath;
     String emzlResult;
-    String ProgressiveResult;
+    String progressiveResult;
     String activeInd;
 
 }

@@ -29,7 +29,7 @@ public class PythonScriptInvokeUtil {
 
 
     public static void main(String[] args) throws IOException {
-        String dir = "C:/Users/perlicue/Desktop/master_lecture/aggregate_engineering/origin_nii";
+        String dir = "C:/Users/perlicue/Desktop/master_lecture/aggregate_engineering/2";
         System.out.println("return :" + invoke(dir));
     }
 }

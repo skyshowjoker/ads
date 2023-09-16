@@ -2,8 +2,8 @@ package com.example.ads.controller;
 
 
 
-import com.example.ads.domain.FileInfo;
-import com.example.ads.domain.Patient;
+import com.example.ads.entity.FileInfo;
+import com.example.ads.entity.Patient;
 import com.example.ads.repository.FileRepository;
 import com.example.ads.repository.PatientRepository;
 import com.example.ads.utils.PythonScriptInvokeUtil;
@@ -31,7 +31,7 @@ public class PatientController {
 
     @GetMapping(path="/predict")
     public @ResponseBody ResponseEntity<String> predict(@RequestParam("patientId") Integer patientId) {
-        FileInfo fileInfo = fileRepository.findById(patientId).get();
+        FileInfo fileInfo = fileRepository.findByPatientId(patientId);
         Object result = PythonScriptInvokeUtil.invoke(fileInfo.getFilePath());
         fileInfo.setEmzlResult(result.toString());
         fileRepository.save(fileInfo);
