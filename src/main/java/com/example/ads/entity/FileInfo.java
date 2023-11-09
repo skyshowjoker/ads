@@ -1,9 +1,6 @@
 package com.example.ads.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.Date;
@@ -14,11 +11,17 @@ public class FileInfo {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     Integer id;
+    @Column(name = "patient_id")
     Integer patientId;
+    @Column(name = "upload_date")
     Date uploadDate;
+    @Column(name = "file_path")
     String filePath;
+    @Column(name = "emzl_result")
     String emzlResult;
+    @Column(name = "progressive_result")
     String progressiveResult;
+    @Column(name = "active_ind")
     String activeInd;
 
 }

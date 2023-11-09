@@ -2,7 +2,6 @@ create database if not exists ads;
 
 use ads;
 
-DROP TABLE `patient` ;
 CREATE table IF NOT EXISTS `patient`(
    `id` INT UNSIGNED AUTO_INCREMENT,
    `name` VARCHAR(100) NOT NULL,
@@ -12,21 +11,26 @@ CREATE table IF NOT EXISTS `patient`(
    `phone` VARCHAR(20) NOT NULL,
    `email` VARCHAR(100) NOT NULL,
    `description` VARCHAR(1000) NOT NULL,
-   `active_ind` VARCHAR(1) NOT NUll,
+   PRIMARY KEY ( `id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE IF NOT EXISTS `fileinfo`(
+   `id` INT UNSIGNED AUTO_INCREMENT,
+   `patientId` INT,
+   `uploadDate` DATE,
+   `filePath` VARCHAR(200),
+   `emzlResult` VARCHAR(100),
+   `progressiveResult` VARCHAR(100),
+   `activeInd` VARCHAR(1),
    PRIMARY KEY ( `id` )
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 
-DROP TABLE IF EXISTS `file`;
 
-CREATE TABLE IF NOT EXISTS `file` (
-   `id` INT UNSIGNED AUTO_INCREMENT,
-   `patient_id` INT NOT NULL,
-   `upload_date` DATE,
-   `file_path` VARCHAR(200) NOT NULL,
-   `emzl_result` VARCHAR(100) NOT NULL,
-   `progressive_result` VARCHAR(100) NOT NULL,
-   `active_ind` VARCHAR(1) NOT NUll,
-   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+insert into patient values (1, '吴芳', '女', '1978-06-14', '10223723', '15283476741', '993768942@qq.com', '[影像所见] 右侧眼球见稍突出，右眶底壁局部骨质缺如，右侧泪囊及鼻泪管见软组织密度影，边缘清楚，CT值约53Hu，左眶及眼球、眼外肌未见明显异常，双侧视神经未见明显异常。两侧上颌窦粘膜增厚。[影像所得] 右侧泪囊及鼻泪管占位？无病史，结合临床。必要时进一步增强CT/MR检查。')
+
+insert into patient values (2, '李丽红', '女', '1984-02-03', '10223723', '15283476741', '993768942@qq.com', '[影像所见] 右侧眼球见稍突出，右眶底壁局部骨质缺如，右侧泪囊及鼻泪管见软组织密度影，边缘清楚，CT值约53Hu，左眶及眼球、眼外肌未见明显异常，双侧视神经未见明显异常。两侧上颌窦粘膜增厚。[影像所得] 右侧泪囊及鼻泪管占位？无病史，结合临床。必要时进一步增强CT/MR检查。')
+
+insert into patient values (3, '董伟民', '男', '1963-01-24', '10223723', '15283476741', '993768942@qq.com', '[影像所见] 右侧眼球见稍突出，右眶底壁局部骨质缺如，右侧泪囊及鼻泪管见软组织密度影，边缘清楚，CT值约53Hu，左眶及眼球、眼外肌未见明显异常，双侧视神经未见明显异常。两侧上颌窦粘膜增厚。[影像所得] 右侧泪囊及鼻泪管占位？无病史，结合临床。必要时进一步增强CT/MR检查。')

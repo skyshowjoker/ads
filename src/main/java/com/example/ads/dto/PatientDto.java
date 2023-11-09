@@ -15,16 +15,15 @@ public class PatientDto {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    Integer id;
+    Long id;
     String name;
     String gender;
     String birthday;
     String caseId;
     String phone;
-    String email;
     String description;
     String activeInd;
-    Date uploadDate;
+    String uploadDate;
     String emzlResult;
     String ProgressiveResult;
 

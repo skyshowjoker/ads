@@ -3,7 +3,7 @@ package com.example.ads.service.impl;
 import com.example.ads.common.AdsContants;
 import com.example.ads.entity.FileInfo;
 import com.example.ads.repository.FileRepository;
-import com.example.ads.repository.PatientRepository;
+import com.example.ads.service.face.IFileStorageService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,7 +18,7 @@ import java.util.Date;
 
 @Service
 @Transactional
-public class FileStorageService {
+public class FileStorageService implements IFileStorageService {
 
     @Value("${file.upload.path}")
     private String uploadPath;

@@ -1,11 +1,10 @@
 package com.example.ads.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.Date;
 
 @Data
 @Entity
@@ -13,14 +12,15 @@ public class Patient {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    Integer id;
+    Long id;
     String name;
     String gender;
-    String birthday;
+    Date birthday;
+    @Column(name = "case_id")
     String caseId;
     String phone;
-    String email;
     String description;
+    @Column(name = "active_ind")
     String activeInd;
 
 }
