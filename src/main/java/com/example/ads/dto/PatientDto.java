@@ -10,11 +10,9 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-@Entity
 public class PatientDto {
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+
     Long id;
     String name;
     String gender;
