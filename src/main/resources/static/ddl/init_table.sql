@@ -29,8 +29,8 @@ CREATE TABLE IF NOT EXISTS `fileinfo`(
 
 
 
-insert into patient values (1, '吴芳', '女', '1978-06-14', '10223723', '15283476741', '993768942@qq.com', '[影像所见] 右侧眼球见稍突出，右眶底壁局部骨质缺如，右侧泪囊及鼻泪管见软组织密度影，边缘清楚，CT值约53Hu，左眶及眼球、眼外肌未见明显异常，双侧视神经未见明显异常。两侧上颌窦粘膜增厚。[影像所得] 右侧泪囊及鼻泪管占位？无病史，结合临床。必要时进一步增强CT/MR检查。')
+insert into patient values (1, 'Wu, Fang', 'Female', '1978-06-14', '10223723', '15283476741', '993768942@qq.com', 'The right eyeball is slightly protruding, the right orbital floor wall is partially boneless, and the right lacrimal sac and nasolacrimal duct are seen with soft tissue density shadows with clear edges.')
 
-insert into patient values (2, '李丽红', '女', '1984-02-03', '10223723', '15283476741', '993768942@qq.com', '[影像所见] 右侧眼球见稍突出，右眶底壁局部骨质缺如，右侧泪囊及鼻泪管见软组织密度影，边缘清楚，CT值约53Hu，左眶及眼球、眼外肌未见明显异常，双侧视神经未见明显异常。两侧上颌窦粘膜增厚。[影像所得] 右侧泪囊及鼻泪管占位？无病史，结合临床。必要时进一步增强CT/MR检查。')
+insert into patient values (2, 'Li, LiHong', 'Female', '1984-02-03', '10223723', '15283476741', '993768942@qq.com', 'No medical history, combined with clinical symptoms. Further enhance CT/MR examination if necessary')
 
 insert into patient values (3, '董伟民', '男', '1963-01-24', '10223723', '15283476741', '993768942@qq.com', '[影像所见] 右侧眼球见稍突出，右眶底壁局部骨质缺如，右侧泪囊及鼻泪管见软组织密度影，边缘清楚，CT值约53Hu，左眶及眼球、眼外肌未见明显异常，双侧视神经未见明显异常。两侧上颌窦粘膜增厚。[影像所得] 右侧泪囊及鼻泪管占位？无病史，结合临床。必要时进一步增强CT/MR检查。')
