@@ -26,7 +26,7 @@ public class PatientController {
 
     @Autowired
     PatientService patientService;
-
+    @CrossOrigin(origins = "https://ads.testop.top")
     @PostMapping(path="/save") // Map ONLY POST Requests
     public @ResponseBody ResponseEntity<Long> addNewPatient (@RequestBody PatientDto patientDto) throws ParseException {
         return ResponseEntity.ok(patientService.addNewPatient(patientDto));

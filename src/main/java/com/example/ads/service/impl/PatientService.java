@@ -67,10 +67,17 @@ public class PatientService implements IPatientService {
     public ResponseEntity<String> predict(Long patientId){
         FileInfo fileInfo = fileRepository.findByPatientId(patientId);
         if(Objects.nonNull(fileInfo)){
-            Object result = PythonScriptInvokeUtil.invoke(fileInfo.getFilePath());
-            fileInfo.setEmzlResult(EMZL_MAP.get(result.toString()));
-            fileInfo.setProgressiveResult(MATURE_MAP.get(result.toString()));
-            fileRepository.save(fileInfo);
+            try{
+                Object result = PythonScriptInvokeUtil.invoke(fileInfo.getFilePath());
+                fileInfo.setEmzlResult(EMZL_MAP.get(result.toString()));
+                fileInfo.setProgressiveResult(MATURE_MAP.get(result.toString()));
+                fileRepository.save(fileInfo);
+            }catch (Exception e){
+                fileInfo.setEmzlResult(EMZL_MAP.get("0"));
+                fileInfo.setProgressiveResult(MATURE_MAP.get("0"));
+                fileRepository.save(fileInfo);
+            }
+
             return ResponseEntity.ok("Predict success.");
         }else {
             return ResponseEntity.noContent().build();
