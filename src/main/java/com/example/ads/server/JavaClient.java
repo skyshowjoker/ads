@@ -15,7 +15,7 @@ public class JavaClient {
     public StringBuilder accessClassify(String requestData){
         StringBuilder response = new StringBuilder();
         try {
-            URL url = new URL("http://172.17.176.1:5000/classify");
+            URL url = new URL("http://0.0.0.0:5000/classify");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/json");

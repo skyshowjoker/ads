@@ -64,7 +64,7 @@ public class PatientService implements IPatientService {
     }
 
     @Override
-    public ResponseEntity<String> predict(Long patientId){
+    public Boolean predict(Long patientId){
         FileInfo fileInfo = fileRepository.findByPatientId(patientId);
         if(Objects.nonNull(fileInfo)){
             try{
@@ -77,10 +77,9 @@ public class PatientService implements IPatientService {
                 fileInfo.setProgressiveResult(MATURE_MAP.get("0"));
                 fileRepository.save(fileInfo);
             }
-
-            return ResponseEntity.ok("Predict success.");
+            return Boolean.TRUE;
         }else {
-            return ResponseEntity.noContent().build();
+            return Boolean.FALSE;
         }
 
     }
