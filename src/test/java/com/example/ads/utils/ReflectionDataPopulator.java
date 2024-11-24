@@ -42,4 +42,8 @@ public class ReflectionDataPopulator {
         // 添加其他类型的处理
         return null;
     }
+    private static Boolean isWrappedType(Class<?> type) {
+
+        return null;
+    }
 }
